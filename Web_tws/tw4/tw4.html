@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termwork 4</title>
+    <style>
+        div{
+            
+            vertical-align: middle;
+            height:200px;
+            width:200px;
+            background-color: coral;
+            animation: sq-to-cir 2s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate;
+        }
+        span{
+            display:block;
+            text-align: center;
+            height:200px;
+            width:200px;
+            background-color: coral;
+            animation: sq-to-cir 2s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate;
+        }
+        @keyframes sq-to-cir {
+            0%{
+                border-radius: 0 0 0 0;
+                transform-origin: center, right;
+                transform:rotate(0deg);
+            }
+            
+        }
+        @keyframes sq-to-cir {
+              0%{
+                border-radius: 0 0 0 0;
+                transform-origin: center, right;
+                transform:rotate(0deg);
+              }          
+              25%{
+                border-radius: 100px 0 0 0;
+                background-color: red;
+                transform-origin: bottom;
+                transform:rotate(0deg);
+              }
+              50%{
+                border-radius: 100px 100px 0 0;
+                background-color:green;
+                transform-origin: center, right;
+                transform:rotate(90deg);
+              }
+              75%{
+                border-radius: 100px 100px 100px 0;
+                background-color: blue;
+                transform-origin: center, right;
+                transform:rotate(75deg);
+              }
+              100%{
+                background-color: coral;
+                border-radius: 100px 100px 100px 100px;
+              }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <pre>
+
+
+        Square to circle
+    </pre>
+</div>
+<div>
+    <pre>
+
+
+        Square to circle
+    </pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Manoj Patil">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        table {
+            border-spacing: .5em;
+        }
+
+        td {
+            font-size: 1.25em;
+            font-family:'Bree Serif', serif;
+        }
+
+        p {
+            font-size: 1.25em;
+        }
+        input,textarea{
+            border-radius: 3px;
+            
+        }
+        input:focus,textarea:focus{
+            background-color: rgba(128, 128, 128, 0.804);
+            color:white;
+        }
+        .astr{
+            color:orange;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form1" onsubmit="return validform()">
+        <h1>Registration Form</h1>
+        <p><b>Use tab keys to move form one input feild to the next.</b></p>
+        <table>
+            <tr>
+                <td><label for="name"><span class="astr">*</span>User id: </label></td>
+                <td><input type="text" id="name" name="name" autofocus required ></td>
+            </tr>
+            <tr>
+                <td><label for="pass"><!--<span class="astr">*</span>-->Password: </label></td> 
+                <td><input type="password" id="pass" required></td>
+            </tr>
+            <tr>
+                <td><label for="name1"><span class="astr">*</span>Name: </label></td>
+                <td><input name="name1" type="text" id="name1" required></td>
+            </tr>
+            <tr>
+                <td><label for="add"><span class="astr">*</span>Address: </label></td>
+                <td><input type="text" id="add" required></td>
+            </tr>
+            <tr>
+                <td><label for="country">Country: </label></td>
+                <td><select name="country" id="country">
+                        <option value="no" >(Please select a country)</option>
+                        <option value="india" >India</option>
+                        <option value="china" >China</option>
+                        <option value="USA">USA</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label for="zip">ZIP code: </label></td>
+                <td><input type="number" id="zip"></td>
+            </tr>
+            <tr>
+                <td><label for="email"><span class="astr">*</span>Email: </label></td>
+                <td><input type="email" name="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td>sex: </td>
+                <td><input type="radio" id="male" name="sex" value="male"><label for="male" checked="true">Male</label><input type="radio"
+                        name="sex" id="female" value="female"><label for="female">Female</label></td>
+            </tr>
+            <tr>
+                <td>Language: </td>
+                <td><input type="checkbox" name="lang" value="english" id="eng"><label for="eng">English</label><input name="lang"
+                        type="checkbox" value="nonenglish" id="Noneng"><label for="Noneng">Non-English</label></td>
+            </tr>
+            <tr>
+                <td><label for="about">About: </td>
+                <td></label><textarea name="about" id="about" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit"></td>
+            </tr>
+        </table>
+
+    </form>
+    <script>
+        function allLetter(inputtxt)
+  {
+   var letters = /^[A-Za-z]+$/;
+   if(inputtxt.value.match(letters))
+     {
+      return true;
+     }
+   else
+     {
+     return false;
+     }
+  }
+
+        function validform(){
+           var form1= document.forms["form1"];
+            if((form1['name'].value.trim()).includes(" ")){
+                alert("Enter valid userId");
+                return false;
+            }
+           if(!allLetter(form1['name1'])){
+            alert("Enter valid name");
+                return false;
+}   
+           if(form1['country'].value=="no"){
+                alert("Select country");
+                return false;
+            }
+
+            if(!(document.getElementById("eng").checked || document.getElementById('Noneng').checked)){
+                alert("select a language");
+                return false;
+            }
+            if(form1['about'].value==""){
+                alert("Enter about");
+                return false;
+            }
+            if(form1['sex'].value==""){
+                alert("Select sex");
+                return false;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
